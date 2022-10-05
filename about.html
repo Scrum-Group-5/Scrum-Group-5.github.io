@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,102 +8,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Rampart+One&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-
-    <title>Quiz App</title>
+    <title>Document</title>
 </head>
 <body>
-    <a href="about.html">About</a>
-    <h1 style="text-align:center;">Scrum Assigner</h1>
-    
-    <div class="quiz-container" id="quiz">
-        <div class="quiz-header">
-            <h2 id="question1">You have an eye for spotting errors in a project that others have missed.</h2>
-            <ul>
-                <li>
-                    <input type="radio" name="QA" value=5 id="a" class="QA">
-                    <label for="1" id="a_text">Strongly Agree</label>
-                </li>
-                <li>
-                    <input type="radio" name="QA" value="4" id="b" class="QA">
-                    <label for="2" id="b_text">Agree</label>
-                </li>
-                <li>
-                    <input type="radio" name="QA" value="3" id="c" class="QA">
-                    <label for="3" id="c_text">Neutral</label>
-                </li>
-                <li>
-                    <input type="radio" name="QA" value="2" id="d" class="QA">
-                    <label for="4" id="d_text">Disagree</label>
-                </li>
-                <li>
-                    <input type="radio" name="QA" value="1" id="e" class="QA">
-                    <label for="5" id="e_text">Strongly Disagree</label>
-                </li>
-            </ul>
-            <h3 id="question2">People often come to you to confirm details about what the project should be.</h3>
-            <ul>
-                <li>
-                    <input type="radio" name="ProductOwner" value=5 id="a" class="ProductOwner">
-                    <label for="1" id="a_text">Strongly Agree</label>
-                </li>
-                <li>
-                    <input type="radio" name="ProductOwner" value="4" id="b" class="ProductOwner">
-                    <label for="2" id="b_text">Agree</label>
-                </li>
-                <li>
-                    <input type="radio" name="ProductOwner" value="3" id="c" class="ProductOwner">
-                    <label for="3" id="c_text">Neutral</label>
-                </li>
-                <li>
-                    <input type="radio" name="ProductOwner" value="2" id="d" class="ProductOwner">
-                    <label for="4" id="d_text">Disagree</label>
-                </li>
-                <li>
-                    <input type="radio" name="ProductOwner" value="1" id="e" class="ProductOwner">
-                    <label for="5" id="e_text">Strongly Disagree</label>
-                </li>
-            </ul>
-        </div>
-        <button id="submit" onclick="pointTotal()">Submit</button>
-        <br>
-        <div id="result"></div>
-        <script> // JavaScript Code
-        // README: When adding new questions make sure to change the class and name to the real role!
-            function pointTotal(){ 
-                let points = new Array(0, 0, 0, 0, 0); // The order of points is Product Owner, Scrum Master, QA, Tech Lead, Tech Chaser
-                var productOwner = document.getElementsByClassName("ProductOwner");
-                var ScrumMaster = document.getElementsByClassName("ScrumMaster");
-                var QA = document.getElementsByClassName("QA");
-                var TechLead = document.getElementsByClassName("TechLead");
-                var TechChaser = document.getElementsByClassName("TechChaser");
-                for(i = 0; i < productOwner.length; i++)
-                    if(productOwner[i].checked)
-                        points[0] += parseInt(productOwner[i].value, 10);
-                for(i = 0; i < ScrumMaster.length; i++)
-                    if(ScrumMaster[i].checked)
-                        points[1] += parseInt(ScrumMaster[i].value, 10);
-                for(i = 0; i < QA.length; i++)
-                    if(QA[i].checked)
-                        points[2] += parseInt(QA[i].value, 10);
-                for(i = 0; i < TechLead.length; i++)
-                    if(TechLead[i].checked)
-                        points[3] += parseInt(TechLead[i].value, 10);
-                for(i = 0; i < TechChaser.length; i++)
-                    if(TechChaser[i].checked)
-                        points[4] += parseInt(TechChaser[i].value, 10);
-                var highestIndex = 0;
-                for(i = 1; i < 5; i++) // Single Highest Role
-                    if(points[i] > points[highestIndex])
-                        highestIndex = i;
-                var roles = new Array("Product Owner", "Scrum Master", "QA", "Tech Lead", "Tech Chaser");
-                document.getElementById("result").innerHTML = "Result: Your best suited role(s) is " + roles[highestIndex];
-                for(i = 0; i < 5; i++) // Multiple Highest Role
-                    if(points[i] == points[highestIndex] && highestIndex != i)
-                        document.getElementById("result").innerHTML += ", " + roles[i];
-                document.getElementById("result").innerHTML += '!';
-        }
-        </script>
+    <a href="index.html">Main Page</a>
+    <h1 style="text-align: center;">Scrum Roles Information</h1>
+    <div class = "roles">
+        <h2>Product Owner</h2>
+			<dd class = "roleText">"Keeper of the Vision"</dd>
+			<dd class="roleText">Product owner prioritizes the product backlog and is authoritive! They add features to the product backlog as the product evolves. 
+			They make decisions about details when asked. They have the ability to accept/reject work at a sprint demo.. Key in the product backlog grooming meeting.</dd>
+        <h2>Scrum Master</h2>
+        <dd class="roleText">"The Hall Monitor"</dd>
+        <dd class="roleText">Lets people know if they are not participating or if their absent too much. Makes sure rituals occur. Encourages full participation in rituals.#1 PROBLEM SOLVER/Chaser 
+			when something gets blocked. Not a "lead/manager". Facilitator in all meetings, but most of all in daily scrum and retrospective.</dd>
+        <h2>Tech Lead</h2>
+        <dd class="roleText">"First among equals"</dd>
+        <dd class="roleText">The most experiences with tech and makes all the large technical decisions. Mentors other group members to bring them up to their skill. </dd>
+
+        <h2>Tech Chaser</h2>
+        <dd class="roleText">"The Inventor"</dd>
+        <dd class="roleText">Researches tech questions, very informal. Likes digging into topics and ideas. Finds training and shares it with the team. Likes to prototype and plan things.</dd>
+		
+        <h2>QA</h2>
+        <dd class="roleText">"The Doomsayer"</dd>
+        <dd class="roleText">Asks questions and runs tests! Very useful if the dev team is not disciplined. Thinks of odd cases for devs to explore. Active when stories need to be fleshed out.</dd>
     </div>
 
+    
 </body>
-</html> 
+</html>
